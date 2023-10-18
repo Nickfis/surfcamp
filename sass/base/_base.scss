@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #363635;
+}
+
+main {
+  min-height: calc(100vh - 13rem);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-weight: 400;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+// html {
+//   font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+//   @include respond(tab-land) {
+//     // width < 900?
+//     font-size: 55%; // 1 rem = 9px, 9/16 = 56.25%
+//   }
+
+//   @include respond(phone) {
+//     // width < 600?
+//     font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+//   }
+
+//   @include respond(big-desktop) {
+//     font-size: 75%; // 1 rem = 12px, 12/16 = 75%
+//   }
+// }
