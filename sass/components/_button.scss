@@ -1,0 +1,13 @@
+.btn {
+  font-size: 2.5rem;
+
+  &--small {
+    padding: 1rem 1.8rem;
+    border-radius: 2.5rem;
+  }
+
+  &--black {
+    background-color: black;
+    color: white;
+  }
+}
