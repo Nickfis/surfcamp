@@ -39,7 +39,7 @@ const Footer = () => {
     <footer className="footer">
       <nav className="footer__nav">
         <img className="footer__logo" src="/assets/logo.svg" alt="" />
-        <ul className="footer_links">
+        <ul className="footer__links">
           {navItems.map((item) => (
             <li key={item.slug}>
               <Link href={item.slug}>

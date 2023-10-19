@@ -1,0 +1,42 @@
+.footer {
+  background-color: black;
+  color: white;
+  padding: 6rem 4.8rem 4.5rem;
+
+  &__logo {
+    width: 8rem;
+    filter: invert(99%) sepia(3%) saturate(825%) hue-rotate(200deg)
+      brightness(118%) contrast(100%);
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 6rem;
+    margin-bottom: 3.5rem;
+  }
+
+  &__links {
+    display: flex;
+    list-style: none;
+
+    & li:not(:last-of-type) {
+      margin-right: 6.3rem;
+    }
+  }
+
+  &__policies {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__policies-nav {
+    display: flex;
+    list-style: none;
+
+    & li:not(:last-of-type) {
+      margin-right: 3.5rem;
+    }
+  }
+}
