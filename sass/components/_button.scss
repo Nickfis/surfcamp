@@ -6,8 +6,23 @@
     border-radius: 2.5rem;
   }
 
+  &--medium {
+    padding: 1.6rem 3.2rem;
+    border-radius: 3.2rem;
+  }
+
   &--black {
     background-color: black;
+    color: white;
+  }
+
+  &--turquoise {
+    background-color: $turquoise;
+    color: white;
+  }
+
+  &--orange {
+    background-color: #ce822f;
     color: white;
   }
 }

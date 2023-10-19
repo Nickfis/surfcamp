@@ -1,0 +1,44 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 83rem;
+  padding: 22rem 4.8rem 0;
+  margin-bottom: 12.5rem;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      border-radius: 0px 0px 200px 200px;
+    }
+  }
+
+  &__headline {
+    margin-bottom: 6.5rem;
+
+    &--orange {
+      color: white;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    &--orange {
+      filter: invert(62%) sepia(21%) saturate(1646%) hue-rotate(348deg)
+        brightness(88%) contrast(81%);
+    }
+  }
+}
