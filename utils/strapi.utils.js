@@ -1,4 +1,5 @@
 import axios from "axios";
+import Link from "next/link";
 
 const BASE_URL = process.env.STRAPI_URL || "http://127.0.0.1:1337";
 
@@ -20,5 +21,21 @@ export function processInfoBlocks(data) {
     ...infoBlock.attributes,
     imageSrc: BASE_URL + infoBlock.attributes?.image?.data?.attributes?.url,
     id: infoBlock.id,
+    button: createInfoBlockButton(infoBlock.attributes.button),
   }));
+}
+
+function createInfoBlockButton(buttonData) {
+  if (!buttonData) {
+    return null;
+  }
+
+  return (
+    <Link
+      href={`/${buttonData.slug}`}
+      className={`btn btn--medium btn--${buttonData.colour}`}
+    >
+      {buttonData.text}
+    </Link>
+  );
 }
