@@ -1,8 +1,12 @@
+import axios from "axios";
 import HighlightArticle from "../_components/Blog/HighlightArticle";
 import SubscribeToNewsletter from "../_components/Blog/SubscribeToNewsletter";
 import FeaturedItems from "../_components/FeaturedItems/FeaturedItems";
+import { fetchBlogArticles, fetchDataFromStrapi } from "@/utils/strapi.utils";
 
-export default function Page() {
+export default async function Page() {
+  const data = await fetchBlogArticles();
+
   const highlightArticleData = {
     headline: "3 tips for a super fast takeoff",
     excerpt: (
