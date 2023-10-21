@@ -22,7 +22,7 @@ export default function Page() {
   const featuredArticles = [
     {
       headline:
-        "surfboard shaping and design behind the scenes of crafting the perfect board",
+        "surfboard shaping  let us use proper words to lengthen this headline and design behind the scenes of crafting the perfect board",
       slug: "/blog/whatever",
       date: "Monday, 05th of June 2023",
       featuredImage: "/assets/hero-experience.png",
