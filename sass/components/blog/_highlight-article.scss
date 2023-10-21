@@ -1,0 +1,22 @@
+.highlight-article {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10rem;
+
+  &__info {
+    width: 49%;
+
+    & .copy {
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__image {
+    width: 49%;
+    height: auto;
+    border-radius: 4rem;
+  }
+}
