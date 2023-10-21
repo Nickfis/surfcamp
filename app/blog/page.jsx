@@ -25,3 +25,5 @@ export default async function Page() {
     </main>
   );
 }
+
+export const revalidate = 300;
