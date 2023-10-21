@@ -16,7 +16,7 @@ const SubscribeToNewsletter = () => {
           className="newsletter__email input"
           placeholder="Enter your E-mail address"
         />
-        <button className="newsletter__subscreibe btn btn--medium btn--turqouise">
+        <button className="newsletter__subscribe btn btn--medium btn--turquoise">
           SUBSCRIBE
         </button>
       </form>

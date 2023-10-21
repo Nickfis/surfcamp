@@ -1,0 +1,10 @@
+.input {
+  outline: none;
+  border: none;
+  font-size: 2rem;
+
+  &::placeholder {
+    color: black;
+    font-size: 2rem;
+  }
+}
