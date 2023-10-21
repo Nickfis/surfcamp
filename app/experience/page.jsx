@@ -1,4 +1,4 @@
-import HeroSection from "./../_components/HeroSection";
+import HeroSection from "../_components/HeroSection";
 import InfoBlock from "./../_components/InfoBlock";
 import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils";
 
