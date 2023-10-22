@@ -11,7 +11,9 @@ export default async function Page({ params }) {
   return (
     <main>
       <ArticleIntro article={article} />
-      <ArticleOverview article={article} />
+      <section className="article-section">
+        <ArticleOverview article={article} />
+      </section>
     </main>
   );
 }
