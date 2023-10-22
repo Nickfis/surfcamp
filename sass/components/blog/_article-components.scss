@@ -2,3 +2,46 @@
   width: 100%;
   margin-bottom: 3rem;
 }
+
+.article-text-image {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+
+  &--portrait {
+    .article-text-image__container {
+      width: 29%;
+    }
+
+    .article-text-image__text {
+      width: 68%;
+    }
+  }
+
+  &__text {
+    width: 42%;
+  }
+
+  &__container {
+    width: 55%;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__caption {
+    color: #686868;
+  }
+}
