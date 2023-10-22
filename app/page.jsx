@@ -1,3 +1,4 @@
+import BlogPreview from "./_components/BlogPreview/BlogPreview";
 import HeroSection from "./_components/HeroSection";
 import InfoBlock from "./_components/InfoBlock";
 import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils";
@@ -20,6 +21,7 @@ export default async function Home() {
       {infoBlockData.map((data) => (
         <InfoBlock key={data.id} data={data} />
       ))}
+      <BlogPreview />
     </main>
   );
 }
