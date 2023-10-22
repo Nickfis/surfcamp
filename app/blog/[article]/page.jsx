@@ -1,4 +1,5 @@
 import ArticleIntro from "@/app/_components/Blog/ArticleIntro";
+import ArticleOverview from "@/app/_components/Blog/ArticleOverview";
 import { fetchBlogArticles, fetchDataFromStrapi } from "@/utils/strapi.utils";
 
 export default async function Page({ params }) {
@@ -10,6 +11,7 @@ export default async function Page({ params }) {
   return (
     <main>
       <ArticleIntro article={article} />
+      <ArticleOverview article={article} />
     </main>
   );
 }

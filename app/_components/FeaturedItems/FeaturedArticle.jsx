@@ -2,7 +2,6 @@ import { formatDate } from "@/utils/strapi.utils";
 import Link from "next/link";
 
 const FeaturedArticle = ({ article }) => {
-  console.log(article);
   return (
     <Link href={`/blog/${article.slug}`} className="featured-items__article">
       <div className="featured-items__article-img">
