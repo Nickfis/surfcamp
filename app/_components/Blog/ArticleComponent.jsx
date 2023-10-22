@@ -1,9 +1,10 @@
+import ArticleHeadline from "./ArticleHeadline";
+
 const ArticleComponent = ({ component }) => {
-  console.log(component);
   const componentType = component.__component.split("blog-article.")[1];
   switch (componentType) {
     case "headline":
-      return <h1>Headline!</h1>;
+      return <ArticleHeadline headline={component} />;
     case "paragraph-with-image":
       return <h1>Paragraph With Image</h1>;
     case "paragraph":
