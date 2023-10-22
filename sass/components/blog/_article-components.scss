@@ -56,3 +56,20 @@
     }
   }
 }
+
+.article-image {
+  margin: 0 auto;
+  width: 65%;
+  min-width: 40rem;
+  margin-bottom: 6rem;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__caption {
+    color: #686868;
+    margin-top: 1.6rem;
+  }
+}
