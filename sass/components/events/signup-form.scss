@@ -1,0 +1,46 @@
+.signup-form {
+  display: flex;
+  justify-content: space-between;
+
+  &__headline {
+    margin-bottom: 3rem;
+  }
+
+  &__info {
+    width: 49%;
+
+    & .copy:not(:last-of-type) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__form {
+    width: 45%;
+
+    & .input {
+      width: 100%;
+    }
+
+    & .input__container {
+      margin-bottom: 4rem;
+    }
+
+    & .btn {
+      margin-top: 2rem;
+    }
+  }
+
+  &__name-container {
+    display: flex;
+    justify-content: space-between;
+
+    & .input__container {
+      width: 48%;
+    }
+  }
+
+  &__error {
+    color: rgb(120, 2, 2);
+    margin-top: 1.6rem;
+  }
+}
