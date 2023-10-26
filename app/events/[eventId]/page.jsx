@@ -3,17 +3,20 @@ import {
   fetchDataFromStrapi,
   fetchIndividualEvent,
 } from "@/utils/strapi.utils";
-import axios from "axios";
 
 export default async function Page({ params }) {
   const { eventId } = params;
   const event = await fetchIndividualEvent(eventId);
 
-  console.log(event.data.data);
+  console.log(event);
 
   return (
     <main className="events-page">
-      <SignupForm />
+      <SignupForm
+        headline={event.name}
+        infoText={event.description}
+        buttonLabel="Sign Up"
+      />
     </main>
   );
 }

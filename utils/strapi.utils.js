@@ -76,5 +76,12 @@ export function extractImageUrl(imageData) {
 
 export async function fetchIndividualEvent(eventId) {
   const response = await axios.get(`${BASE_URL}/api/events/${eventId}`);
-  return response;
+  return processEventData(response.data.data);
+}
+
+function processEventData(event) {
+  return {
+    ...event.attributes,
+    id: event.id,
+  };
 }
