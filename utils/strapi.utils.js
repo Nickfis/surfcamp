@@ -105,27 +105,35 @@ export function generateSignupPayload(formData, eventId) {
   }
 }
 
-export async function fetchAllEvents() {
-  const query = qs.stringify(
-    {
-      pagination: {
-        start: 0,
-        limit: 12,
-      },
-      sort: ["startingDate:asc"],
-      filters: {
-        startingDate: {
-          $gt: new Date(),
-        },
-      },
-      populate: {
-        image: {
-          populate: "*",
-        },
+function createEventQuery(eventIdToExclude) {
+  const queryObject = {
+    pagination: {
+      start: 0,
+      limit: 12,
+    },
+    sort: ["startingDate:asc"],
+    filters: {
+      startingDate: {
+        $gt: new Date(),
       },
     },
-    { encodeValuesOnly: true }
-  );
+    populate: {
+      image: {
+        populate: "*",
+      },
+    },
+  };
+
+  if (eventIdToExclude) {
+    queryObject.filters.id = {
+      $ne: eventIdToExclude,
+    };
+  }
+  return qs.stringify(queryObject, { encodeValuesOnly: true });
+}
+
+export async function fetchAllEvents(eventIdToExclude = null) {
+  const query = createEventQuery(eventIdToExclude);
 
   const response = await axios.get(`${BASE_URL}/api/events?${query}`);
   return response.data.data.map((event) => processEventData(event));
