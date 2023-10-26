@@ -3,12 +3,19 @@ import { useState } from "react";
 import TextInput from "../TextInput";
 import axios from "axios";
 import { allDataFilledIn } from "@/utils/validation.utils";
+import { generateSignupPayload } from "@/utils/strapi.utils";
 
-const SignupForm = ({ headline, infoText, buttonLabel, pricing }) => {
+const SignupForm = ({
+  headline,
+  infoText,
+  buttonLabel,
+  pricing,
+  eventId = null,
+}) => {
   const [formData, setFormData] = useState({
     firstName: "Niklas",
     lastName: "Fischer",
-    email: "nik.com",
+    email: "nik@gmail.com",
     phone: "321321",
   });
 
@@ -22,9 +29,7 @@ const SignupForm = ({ headline, infoText, buttonLabel, pricing }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const payload = {
-      data: { ...formData, isGeneralInterest: true },
-    };
+    const payload = generateSignupPayload(formData, eventId);
 
     if (allDataFilledIn(formData)) {
       try {
