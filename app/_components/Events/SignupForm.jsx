@@ -19,7 +19,6 @@ const SignupForm = ({
     phone: "321321",
   });
 
-  console.log(pricing);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
 

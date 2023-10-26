@@ -1,5 +1,6 @@
 import axios from "axios";
 import Link from "next/link";
+import qs from "qs";
 
 const BASE_URL = process.env.STRAPI_URL || "http://127.0.0.1:1337";
 
@@ -101,4 +102,30 @@ export function generateSignupPayload(formData, eventId) {
       },
     };
   }
+}
+
+export async function fetchAllEvents() {
+  const query = qs.stringify(
+    {
+      pagination: {
+        start: 0,
+        limit: 12,
+      },
+      sort: ["startingDate:asc"],
+      filters: {
+        startingDate: {
+          $gt: new Date(),
+        },
+      },
+      populate: {
+        image: {
+          populate: "*",
+        },
+      },
+    },
+    { encodeValuesOnly: true }
+  );
+
+  const response = await axios.get(`${BASE_URL}/api/events?${query}`);
+  return response.data.data;
 }
