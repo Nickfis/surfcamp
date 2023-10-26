@@ -43,4 +43,14 @@
     color: rgb(120, 2, 2);
     margin-top: 1.6rem;
   }
+
+  &__pricing {
+    & h3 {
+      margin-top: 6rem;
+      margin-bottom: 2.4rem;
+    }
+    & p:first-of-type {
+      margin-bottom: 8px;
+    }
+  }
 }

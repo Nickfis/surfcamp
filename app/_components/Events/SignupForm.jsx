@@ -4,13 +4,15 @@ import TextInput from "../TextInput";
 import axios from "axios";
 import { allDataFilledIn } from "@/utils/validation.utils";
 
-const SignupForm = ({ headline, infoText, buttonLabel }) => {
+const SignupForm = ({ headline, infoText, buttonLabel, pricing }) => {
   const [formData, setFormData] = useState({
     firstName: "Niklas",
     lastName: "Fischer",
     email: "nik.com",
     phone: "321321",
   });
+
+  console.log(pricing);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
 
@@ -86,6 +88,19 @@ const SignupForm = ({ headline, infoText, buttonLabel }) => {
           <button className="btn btn--medium btn--turquoise" type="submit">
             {buttonLabel || "Stay in touch!"}
           </button>
+          {pricing && (
+            <div className="signup-form__pricing">
+              <h3>Pricing</h3>
+              <p className="copy">
+                Single Room:{" "}
+                <span className="bold">{pricing.singlePrice}€ per person</span>
+              </p>
+              <p className="copy">
+                Shared Room:{" "}
+                <span className="bold">{pricing.sharedPrice}€ per person</span>
+              </p>
+            </div>
+          )}
         </form>
       )}
     </section>
