@@ -13,7 +13,7 @@ const FeaturedEvent = ({ event }) => {
       </div>
       <div className="featured-items__article-text featured-items__article-text--event">
         <h5>{event.name}</h5>
-        <p className="copy-small">{formatDate(event.startingDate)}</p>
+        <p className="copy-small bold">{formatDate(event.startingDate)}</p>
         <p className="copy-small">Prices starting at {event.sharedPrice}</p>
       </div>
     </Link>
