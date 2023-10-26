@@ -83,6 +83,7 @@ export async function fetchIndividualEvent(eventId) {
 function processEventData(event) {
   return {
     ...event.attributes,
+    image: BASE_URL + event.attributes?.image?.data?.attributes?.url,
     id: event.id,
   };
 }
@@ -127,5 +128,5 @@ export async function fetchAllEvents() {
   );
 
   const response = await axios.get(`${BASE_URL}/api/events?${query}`);
-  return response.data.data;
+  return response.data.data.map((event) => processEventData(event));
 }
